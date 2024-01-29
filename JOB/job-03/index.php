@@ -1,13 +1,12 @@
 <?php
 
 class Category {
-    private $id;
-    private $name;
-    private $description;
-    private $createdAt;
-    private $updatedAt;
-
-    public function __construct($id = null, $name = "", $description = "", $createdAt = null, $updatedAt = null) {
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?string $description = null;
+    private ?DateTime $createdAt = null;
+    private ?DateTime $updatedAt = null;
+    public function __construct($id, $name, $description, $createdAt, $updatedAt) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -57,18 +56,18 @@ class Category {
 }
 
 class Product {
-    private $id;
-    private $name;
-    private $photos;
-    private $price;
-    private $description;
-    private $quantity;
-    private $createdAt;
-    private $updatedAt;
-    private $category_id;
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?array $photos = [];
+    private ?int $price = 0;
+    private ?string $description = null;
+    private ?int $quantity = 0;
+    private ?DateTime $createdAt = null;
+    private ?DateTime $updatedAt = null;
+    private ?int $category_id = null;
 
-    public function __construct($id = null, $name = "", $photos = [], $price = 0, $description = "", 
-                                $quantity = 0, $createdAt = null, $updatedAt = null, $category_id = null) {
+    public function __construct($id, $name, $photos, $price, $description,
+                                $quantity, $createdAt, $updatedAt, $category_id) {
         $this->id = $id;
         $this->name = $name;
         $this->photos = $photos;
@@ -156,7 +155,7 @@ class Product {
 // Exemple d'utilisation :
 $category = new Category(1, "Électronique", "Catégorie pour les produits électroniques");
 
-$product = new Product(1, "Smartphone", ["photo1.jpg", "photo2.jpg"], 500, "Un excellent smartphone", 20, null, null, $category->getId());
+$product = new Product(1, "Smartphone", ["photo1.json", "photo2.json"], 500, "Un excellent smartphone", 20, null, null, $category->getId());
 
 // Afficher les propriétés de la catégorie avec var_dump()
 var_dump($category);

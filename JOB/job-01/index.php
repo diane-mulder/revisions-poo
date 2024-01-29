@@ -86,17 +86,19 @@ class Product {
     }
 }
 
-// Exemple d'utilisation :
-$product = new Product(
-    1,
-    "Nom du produit",
-    ["photo1.jpg", "photo2.jpg"],
-    100,
-    "Description du produit",
-    10,
-    '2024-01-08 12:00:00',
-    '2024-01-08 13:30:00'
-);
-
-// Afficher les propriétés du produit avec var_dump()
+$product = new Product(1, "T-Shirt", ["photo1.json"], 1000, "A beautiful T-Shirt", 10, new DateTime(), new DateTime());
 var_dump($product);
+
+// Test des getters
+echo "Nom du produit : " . $product->getName() . "\n";
+echo "Prix du produit : " . $product->getPrice() . "\n";
+$product->setId(2);
+
+// Test des setters
+$product->setName("T-Shirt 2");
+$product->setPrice(200);
+
+echo "Nouveau nom du produit : " . $product->getName() . "\n";
+echo "Nouveau prix du produit : " . $product->getPrice() . "\n";
+
+?>

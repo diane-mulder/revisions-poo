@@ -158,7 +158,7 @@ $category = new Category(1, "Électronique", "Catégorie pour les produits élec
 $product = new Product(
     1,
     "Smartphone",
-    ["photo1.jpg", "photo2.jpg"],
+    ["photo1.json", "photo2.json"],
     500,
     "Un excellent smartphone",
     20,
